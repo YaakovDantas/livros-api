@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Livro;
+use App\Book;
 use Illuminate\Http\Request;
-use App\Http\Requests\LivrosFormRequest;
+use App\Http\Requests\BooksFormRequest;
 
-class LivroController extends Controller
+class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,7 @@ class LivroController extends Controller
      */
     public function index()
     {
-        //
-        return Livro::all();
+        return Book::all();
     }
     
     /**
@@ -25,47 +24,47 @@ class LivroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(LivrosFormRequest $request)
+    public function store(BooksFormRequest $request)
     {   
         // return $request->all();
-       return Livro::create($request->all());
+       return Book::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Livro  $livro
+     * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return Livro::find($id);
+        return Book::find($id);
     }
     
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Livro  $livro
+     * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(AutoresFormRequest $request, $id)
-    {
+    public function update(BooksFormRequest $request, $id)
+    {   
         
-        $livro = Livro::find($id);
-        $livro->update($request->all());
-        return redirect("/api/livros");
+        $book = Book::find($id);
+        $book->update($request->all());
+        return redirect("/api/books");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Livro  $livro
+     * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
     public function destroy( $id)
     {
-        Livro::destroy($id);
-        return redirect("/api/livros");   
+        Book::destroy($id);
+        return redirect("/api/books");   
     }
 }

@@ -4,7 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LivrosFormRequest extends FormRequest
+
+class AuthorsFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,18 +25,14 @@ class LivrosFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => 'required|min:10|max:40',
-            'valor' => 'required|numeric',
-            'autor_id' => 'required'
+            'name' => "required|min:3"
         ];
     }
     public function messages ()
     {
         return [
             'required' => 'O campo :attribute é obrigatório',
-            'nome.min' => 'O campo nome precisa ter pelo menos três caracteres',
-            'nome.max' => 'O campo nome precisa ter no máximo quarenta caracteres',
-            'valor.numeric' => 'O campo valor precisa ter um número',
+            'name.min' => 'O campo nome precisa ter pelo menos três caracteres'
         ];
     }
 }

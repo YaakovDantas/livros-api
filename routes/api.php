@@ -18,8 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resources([
-    'livros' => 'LivroController',
-     'autores' => 'AutorController'
+    'books' => 'BookController',
+    'authors' => 'AuthorController'
 ]);
 
-Route::get('/autores/{id}/livros', "AutorController@getLivros");
+Route::get('/authors/{id}/books', "AuthorController@getBooks");

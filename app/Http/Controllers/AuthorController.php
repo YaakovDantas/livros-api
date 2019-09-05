@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Autor;
+use App\Author;
 use Illuminate\Http\Request;
-use App\Http\Requests\AutoresFormRequest;
+use App\Http\Requests\AuthorsFormRequest;
 
-class AutorController extends Controller
+class AuthorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class AutorController extends Controller
      */
     public function index()
     {
-        return Autor::query()->orderBy('nome')->get();
-        // return Autor::all();
+        return Author::query()->orderBy('name')->get();
+        // return Author::all();
         
     }
     /**
@@ -25,24 +25,24 @@ class AutorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AutoresFormRequest $request)
+    public function store(AuthorsFormRequest $request)
     {
         // $request->validate([
         //     'nome' => "required"
         // ]);
-        return Autor::create($request->all());
+        return Author::create($request->all());
         
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Autor  $autor
+     * @param  \App\Author  $author
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return Autor::find($id);
+        return Author::find($id);
     }
 
     
@@ -50,31 +50,31 @@ class AutorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Autor  $autor
+     * @param  \App\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function update(AutoresFormRequest $request, $id)
+    public function update(AuthorsFormRequest $request, $id)
     {
-        $autor = Autor::find($id);
-        $autor->update($request->all());
-        return redirect("/api/autores");
+        $author = Author::find($id);
+        $author->update($request->all());
+        return redirect("/api/authors");
 
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Autor  $autor
+     * @param  \App\Author  $author
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {   
         
-        Autor::destroy($id);
-        return redirect("/api/autores");
+        Author::destroy($id);
+        return redirect("/api/authors");
     }
 
-    public function getLivros($id){
-        return Autor::find($id)->livros;
+    public function getBooks($id){
+        return Author::find($id)->books;
     }
 }
