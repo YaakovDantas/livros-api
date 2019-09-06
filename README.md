@@ -67,7 +67,7 @@ post /api/authors > cadastra um autor\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autor criado
 
 put /api/authors/{id} > atualiza um author\
-  &nbsp;&nbsp;&nbsp;&nbsp;params
+  &nbsp;&nbsp;&nbsp;&nbsp;params\
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key 'name',  nome do autor, required|min:3
   &nbsp;&nbsp;&nbsp;&nbsp;return
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lista de todos os outros autores
