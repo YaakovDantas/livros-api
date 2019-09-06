@@ -52,27 +52,27 @@ API foi criada com [Fractal](https://github.com/spatie/laravel-fractal)
 ## AUTORES
 ----------------------------------------------------------------------
 
-get /api/authors > Lista todos os autores
+**GET** /api/authors > Lista todos os autores
 
-get /api/authors?include=books > Lista todos os autores e seus livros
+**GET** /api/authors?include=books > Lista todos os autores e seus livros
 
-get /api/authors/{id} > detalhe de um autor
+**GET** /api/authors/{id} > detalhe de um autor
 
-get /api/authors/{id}?include=books > detalhe de um autor e todos seus livros
+**GET** /api/authors/{id}?include=books > detalhe de um autor e todos seus livros
 
-post /api/authors > cadastra um autor\
+**POST** /api/authors > cadastra um autor\
 &nbsp;&nbsp;&nbsp;&nbsp;params\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key 'name',  nome do autor, required|min:3\
 &nbsp;&nbsp;&nbsp;&nbsp;return\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autor criado\
 
-put /api/authors/{id} > atualiza um author\
+**PUT** /api/authors/{id} > atualiza um author\
   &nbsp;&nbsp;&nbsp;&nbsp;params\
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key 'name',  nome do autor, required|min:3\
   &nbsp;&nbsp;&nbsp;&nbsp;return\
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lista de todos os outros autores\
 
-delete /api/authors/{id} > deleta um autor\
+**DELETE** /api/authors/{id} > deleta um autor\
   &nbsp;&nbsp;&nbsp;&nbsp;return\
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lista de todos os outros autores\
 
@@ -80,11 +80,11 @@ delete /api/authors/{id} > deleta um autor\
 ## LIVROS
 ----------------------------------------------------------------------
 
-get /api/books > Lista todos os livros
+**GET** /api/books > Lista todos os livros
 
-get /api/books/{id} > detalhe de um livro
+**GET** /api/books/{id} > detalhe de um livro
 
-post /api/books > cadastra um livro\
+**POST** /api/books > cadastra um livro\
   &nbsp;&nbsp;&nbsp;&nbsp;params\
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key 'name',  nome do livro, required|min:10|max:40\
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key 'value',  valor do livro, required|numeric\
@@ -92,7 +92,7 @@ post /api/books > cadastra um livro\
   &nbsp;&nbsp;&nbsp;&nbsp;return\
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;livro criado\
 
-put /api/books/{id} > atualiza um livro\
+**PUT** /api/books/{id} > atualiza um livro\
  &nbsp;&nbsp;&nbsp;&nbsp; params\
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  key 'name',  nome do livro, required|min:10|max:40\
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   key 'value',  valor do livro, required|numeric\
@@ -100,7 +100,7 @@ put /api/books/{id} > atualiza um livro\
  &nbsp;&nbsp;&nbsp;&nbsp; return\
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  lista de todos os outros livros\
 
-delete /api/books/{id} > deleta um livro\
+**DELETE** /api/books/{id} > deleta um livro\
  &nbsp;&nbsp;&nbsp;&nbsp; return\
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  lista de todos os outros livros\
 
