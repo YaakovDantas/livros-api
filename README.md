@@ -61,16 +61,16 @@ get /api/authors/{id} > detalhe de um autor
 get /api/authors/{id}?include=books > detalhe de um autor e todos seus livros
 
 post /api/authors > cadastra um autor\
-&nbsp;&nbsp;&nbsp;&nbsp;params
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key 'name',  nome do autor, required|min:3
-&nbsp;&nbsp;&nbsp;&nbsp;return
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autor criado
+&nbsp;&nbsp;&nbsp;&nbsp;params\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key 'name',  nome do autor, required|min:3\
+&nbsp;&nbsp;&nbsp;&nbsp;return\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autor criado\
 
 put /api/authors/{id} > atualiza um author\
   &nbsp;&nbsp;&nbsp;&nbsp;params\
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key 'name',  nome do autor, required|min:3
-  &nbsp;&nbsp;&nbsp;&nbsp;return
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lista de todos os outros autores
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key 'name',  nome do autor, required|min:3\
+  &nbsp;&nbsp;&nbsp;&nbsp;return\
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lista de todos os outros autores\
 
 delete /api/authors/{id} > deleta um autor\
   &nbsp;&nbsp;&nbsp;&nbsp;return
