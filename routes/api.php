@@ -21,5 +21,3 @@ Route::resources([
     'books' => 'BookController',
     'authors' => 'AuthorController'
 ]);
-
-Route::get('/authors/{id}/books', "AuthorController@getBooks");

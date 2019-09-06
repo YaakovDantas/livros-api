@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Author;
 use Illuminate\Http\Request;
 use App\Http\Requests\AuthorsFormRequest;
+use App\Helpers\FractalUtils;
+
 
 class AuthorController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +18,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        return Author::query()->orderBy('name')->get();
-        // return Author::all();
-        
+        return FractalUtils::genericFractal( Author::query()->orderBy('name')->get(), "AuthorTransformer");
     }
     /**
      * Store a newly created resource in storage.
@@ -30,7 +31,8 @@ class AuthorController extends Controller
         // $request->validate([
         //     'nome' => "required"
         // ]);
-        return Author::create($request->all());
+        
+        return FractalUtils::genericFractal( Author::create($request->all()),  "AuthorTransformer");
         
     }
 
@@ -42,10 +44,9 @@ class AuthorController extends Controller
      */
     public function show($id)
     {
-        return Author::find($id);
+        return FractalUtils::genericFractal( Author::find($id),  "AuthorTransformer");
     }
 
-    
     /**
      * Update the specified resource in storage.
      *
@@ -57,7 +58,8 @@ class AuthorController extends Controller
     {
         $author = Author::find($id);
         $author->update($request->all());
-        return redirect("/api/authors");
+        return redirect("/api/authors/".$id);
+        // return redirect("/api/authors");
 
     }
 
@@ -69,12 +71,12 @@ class AuthorController extends Controller
      */
     public function destroy($id)
     {   
-        
         Author::destroy($id);
         return redirect("/api/authors");
     }
 
-    public function getBooks($id){
-        return Author::find($id)->books;
+    private function genericFractal($collection, $transformer){
+        return Fractal::create($collection,$transformer)->toJson();
     }
 }
+ 

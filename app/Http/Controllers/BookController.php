@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Book;
 use Illuminate\Http\Request;
 use App\Http\Requests\BooksFormRequest;
+use App\Helpers\FractalUtils;
+
 
 class BookController extends Controller
 {
@@ -15,7 +17,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        return Book::all();
+        return FractalUtils::genericFractal(Book::all(), "BookTransformer");
     }
     
     /**
@@ -27,7 +29,7 @@ class BookController extends Controller
     public function store(BooksFormRequest $request)
     {   
         // return $request->all();
-       return Book::create($request->all());
+       return FractalUtils::genericFractal(Book::create($request->all()), "BookTransformer");
     }
 
     /**
@@ -38,7 +40,7 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        return Book::find($id);
+        return FractalUtils::genericFractal(Book::find($id), "BookTransformer");
     }
     
     /**
@@ -52,8 +54,9 @@ class BookController extends Controller
     {   
         
         $book = Book::find($id);
+        
         $book->update($request->all());
-        return redirect("/api/books");
+        return redirect("/api/books/".$id);
     }
 
     /**
