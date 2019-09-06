@@ -4,7 +4,10 @@ simples api de livros e autos com laravel
 Banco de dados
 Autores(authors)  e Livros(books)
 
-1 Author tem N Livros
+1 Autor tem N Livros
+
+Autor hasMany Livros
+Livros belongsTo Autor
 
 ----------------------------------------------------------------------
 Seguir os passos abaixo para executar o projeto
