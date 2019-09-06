@@ -7,7 +7,7 @@ Autores(authors)  e Livros(books)
 1 Autor tem N Livros
 
 Autor hasMany Livros\
-Livros belongsTo Autor\
+Livros belongsTo Autor
 
 ----------------------------------------------------------------------
 Seguir os passos abaixo para executar o projeto
