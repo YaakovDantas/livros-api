@@ -60,7 +60,7 @@ get /api/authors/{id} > detalhe de um autor
 
 get /api/authors/{id}?include=books > detalhe de um autor e todos seus livros
 
-post /api/authors > cadastra um autor
+post /api/authors > cadastra um autor\
   params
     key 'name',  nome do autor, required|min:3
   return
