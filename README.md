@@ -61,20 +61,20 @@ get /api/authors/{id} > detalhe de um autor
 get /api/authors/{id}?include=books > detalhe de um autor e todos seus livros
 
 post /api/authors > cadastra um autor\
-  params
-    key 'name',  nome do autor, required|min:3
-  return
-    autor criado
+&nbsp;&nbsp;&nbsp;&nbsp;params
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key 'name',  nome do autor, required|min:3
+&nbsp;&nbsp;&nbsp;&nbsp;return
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autor criado
 
-put /api/authors/{id} > atualiza um author
-  params
-    key 'name',  nome do autor, required|min:3
-  return
-    lista de todos os outros autores
+put /api/authors/{id} > atualiza um author\
+  &nbsp;&nbsp;&nbsp;&nbsp;params
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key 'name',  nome do autor, required|min:3
+  &nbsp;&nbsp;&nbsp;&nbsp;return
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lista de todos os outros autores
 
-delete /api/authors/{id} > deleta um autor
-  return
-    lista de todos os outros autores
+delete /api/authors/{id} > deleta um autor\
+  &nbsp;&nbsp;&nbsp;&nbsp;return
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lista de todos os outros autores
 
 ----------------------------------------------------------------------
 ## LIVROS
@@ -84,13 +84,13 @@ get /api/books > Lista todos os livros
 
 get /api/books/{id} > detalhe de um livro
 
-post /api/books > cadastra um livro
-  params
-    key 'name',  nome do livro, required|min:10|max:40
-    key 'value',  valor do livro, required|numeric
-    key 'author_id',  id do autor do livro, required
-  return
-    livro criado
+post /api/books > cadastra um livro\
+  &nbsp;&nbsp;&nbsp;&nbsp;params
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key 'name',  nome do livro, required|min:10|max:40
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key 'value',  valor do livro, required|numeric
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key 'author_id',  id do autor do livro, required
+  &nbsp;&nbsp;&nbsp;&nbsp;return
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;livro criado
 
 put /api/books/{id} > atualiza um livro
   params
