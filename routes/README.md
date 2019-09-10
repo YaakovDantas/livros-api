@@ -6,7 +6,7 @@ This API was developed for the purpose of providing information for the [Livros-
 
 - PHP >= 7.2.22
 - SQLITE3
-- [Laravel 5.7 dependencies](https://laravel.com/docs/5.7/installation)
+- [Laravel 6.0 dependencies](https://laravel.com/docs/6.0/installation)
 - Composer >= 1.8.5
 
 ### Installing
