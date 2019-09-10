@@ -205,3 +205,4 @@ To delete an book, simply send a DELETE request to the following endpoint:
 
 * [Laravel](https://laravel.com/) - Serve-side framework used
 * [Composer](https://getcomposer.org/) - Dependency manager for PHP
+* [Fracal](https://fractal.thephpleague.com/) - Output complex, flexible, AJAX/RESTful data structures
