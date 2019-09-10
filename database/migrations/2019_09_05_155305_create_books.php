@@ -18,7 +18,7 @@ class CreateBooks extends Migration
             $table->unsignedBigInteger('author_id');
             $table->string('name');
             $table->decimal('value',8,2);
-            $table->foreign('author_id')->references('id')->on('authors');
+            $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');
 
         });
     }

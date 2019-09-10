@@ -16,11 +16,15 @@ use Illuminate\Http\Request;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::post('/login', 'TokenController@gerarToken');
+
+
 Route::post('/register', 'TokenController@register');
+Route::post('/login', 'TokenController@gerarToken');	
 
 Route::middleware(['my_auth'])->group(function () {
     Route::resource('books', 'BookController');
-    Route::resource('authors', 'AuthorController');
+	    
    
 });
+
+Route::resource('authors', 'AuthorController');
