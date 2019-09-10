@@ -15,9 +15,10 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return FractalUtils::genericFractal(Book::all(), "BookTransformer");
+        $paginate = $request->page;
+        return FractalUtils::genericFractal(Book::paginate($paginate), "BookTransformer");
     }
     
     /**

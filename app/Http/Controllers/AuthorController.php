@@ -16,9 +16,11 @@ class AuthorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return FractalUtils::genericFractal( Author::query()->orderBy('name')->get(), "AuthorTransformer");
+        $paginate = $request->page;
+        // return AuthorResource::collection(Author::query()->orderBy('name')->paginate($paginate));
+        return FractalUtils::genericFractal( Author::query()->orderBy('name')->paginate($paginate), "AuthorTransformer");
     }
     /**
      * Store a newly created resource in storage.
