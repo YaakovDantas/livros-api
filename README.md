@@ -62,8 +62,8 @@ Before taking any action in the API, it is necessary to have a registered user. 
 
 ```json
 {
-	"email": "email@example.com",
-	"password": "password123",
+    "email": "email@example.com",
+    "password": "password123",
 
 }
 ```
@@ -84,8 +84,8 @@ After create an account, send a POST request to the end point **/api/login** wit
 
 ```json
 {
-	"email": "email@example.com",
-	"password": "password123"
+    "email": "email@example.com",
+    "password": "password123"
 }
 ```
 If is an user valid the return it will be like this.
@@ -109,8 +109,8 @@ To perform actions on the API it is necessary that the user is authenticated. To
 The expected response if the user authenticates successfully, is an authentication token with the following structure:
 ```json
 {
-	"email": "email@example.com",
-	"password": "password123"
+    "email": "email@example.com",
+    "password": "password123"
 }
 ```
 
@@ -133,7 +133,7 @@ To register a new author in the database, just send a POST request to the **/api
 
 ```json
 {
-	"name": "Name"
+    "name": "Name"
 }
 ```
 
@@ -160,7 +160,7 @@ To update the data of an author, simply send a PUT request to the endpoint **/ap
 
 ```json
 {
-	"name": "Name",
+    "name": "Name",
 }
 ```
 
@@ -205,3 +205,4 @@ To delete an book, simply send a DELETE request to the following endpoint:
 
 * [Laravel](https://laravel.com/) - Serve-side framework used
 * [Composer](https://getcomposer.org/) - Dependency manager for PHP
+* [Fracal](https://fractal.thephpleague.com/) - Output complex, flexible, AJAX/RESTful data structures
